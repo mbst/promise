@@ -19,6 +19,12 @@
         <junit.version>4.12</junit.version>
         <mockito-core.version>1.10.19</mockito-core.version>
         <hamcrest.version>1.3</hamcrest.version>
+
+        <sonar.jacoco.itReportPath>${project.basedir}/target/jacoco-it.exec</sonar.jacoco.itReportPath>
+        <sonar.jacoco.reportPath>${project.basedir}/target/jacoco.exec</sonar.jacoco.reportPath>
+        <sonar.junit.reportsPath>${project.basedir}/target/surefire-reports</sonar.junit.reportsPath>
+        <sonar.language>java</sonar.language>
+        <sonar.exclusions>**/target/**/*,**/src/main/java/**/generated/**/*</sonar.exclusions>
     </properties>
 
     <dependencies>
@@ -76,4 +82,29 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>metabroadcast-mvn</id>
+            <name>Public Releases MetaBroadcast Repo</name>
+            <url>dav:http://mvn.metabroadcast.com:80/public-releases-local
+            </url>
+        </repository>
+        <snapshotRepository>
+            <id>metabroadcast-mvn</id>
+            <name>Public Snapshots MetaBroadcast Repo</name>
+            <url>dav:http://mvn.metabroadcast.com:80/public-snapshots-local
+            </url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>metabroadcast-mvn</id>
+            <name>Metabroadcast</name>
+            <url>http://mvn.metabroadcast.com/all</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
 </project>
