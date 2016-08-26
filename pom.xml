@@ -13,6 +13,8 @@
     <url>https://github.com/mbst/promise</url>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <guava.version>19.0</guava.version>
         <jsr305.version>3.0.1</jsr305.version>
 
